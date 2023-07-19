@@ -146,7 +146,7 @@
     "CHECKBOX",
     [ELSTRING(settings,moveWhileTabbedOut), ELSTRING(settings,moveWhileTabbedOut_desc)],
     localize ELSTRING(settings,clientside),
-    false,
+    true,
     0,
     {["moveWhileTabbedOut", TFAR_moveWhileTabbedOut] call TFAR_fnc_setPluginSetting;}
 ] call CBA_Settings_fnc_init;
@@ -171,7 +171,7 @@
     "CHECKBOX",
     [ELSTRING(settings,noAutomoveSpectator), ELSTRING(settings,noAutomoveSpectator_desc)],
     localize ELSTRING(settings,clientside),
-    false,
+    true,
     0,
     {["noAutomoveSpectator", _this] call TFAR_fnc_setPluginSetting;}
 ] call CBA_Settings_fnc_init;
@@ -275,7 +275,7 @@
     "CHECKBOX",
     [ELSTRING(settings,spectator_hear_emy), ELSTRING(settings,spectator_hear_emy_desc)],
     localize ELSTRING(settings,global),
-    true,
+    false,
     1,
     {["spectatorNotHearEnemies", !TFAR_spectatorCanHearEnemyUnits] call TFAR_fnc_setPluginSetting;}
 ] call CBA_Settings_fnc_init;
@@ -284,7 +284,7 @@
     "CHECKBOX",
     [ELSTRING(settings,spectator_hear), ELSTRING(settings,spectator_hear_desc)],
     localize ELSTRING(settings,global),
-    true,
+    false,
     1,
     {["spectatorCanHearFriendlies", TFAR_spectatorCanHearFriendlies] call TFAR_fnc_setPluginSetting;}
 ] call CBA_Settings_fnc_init;
@@ -643,7 +643,7 @@
     "CHECKBOX",
     [ELSTRING(settings,allowDebugging), ELSTRING(settings,allowDebugging_desc)],
     localize ELSTRING(settings,global),
-    true,
+    false,
     1,
     {["allowDebugging", _this] call TFAR_fnc_setPluginSetting;}
 ] call CBA_Settings_fnc_init;

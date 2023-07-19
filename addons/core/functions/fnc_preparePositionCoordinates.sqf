@@ -21,7 +21,7 @@
 */
 params ["_unit", "_nearPlayer","_unitName"];
 
-private _isSpectating = _unit getVariable ["TFAR_forceSpectator",false];
+private _isSpectating = _unit getVariable ["TFAR_forceSpectator",false] or !alive _unit;
 
 (call (_unit getVariable ["TF_fnc_position", TFAR_fnc_defaultPositionCoordinates])) params ["_pos", "_curViewDir"]; //_this get's forwarded without specifying it - perf improvement
 

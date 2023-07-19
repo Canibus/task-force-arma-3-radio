@@ -33,13 +33,13 @@ if !(missionNamespace getVariable ["TFAR_spectatorCanHearFriendlies",true]) then
 ["intercomDucking",missionNamespace getVariable ["TFAR_intercomDucking",0.2]] call TFAR_fnc_setPluginSetting;
 ["intercomEnabled",missionNamespace getVariable ["TFAR_enableIntercom",true]] call TFAR_fnc_setPluginSetting;
 ["pluginTimeout",missionNamespace getVariable ["TFAR_pluginTimeout",4]] call TFAR_fnc_setPluginSetting;
-["spectatorNotHearEnemies",!(missionNamespace getVariable ["TFAR_spectatorCanHearEnemyUnits",false])] call TFAR_fnc_setPluginSetting;
-["spectatorCanHearFriendlies",missionNamespace getVariable ["TFAR_spectatorCanHearFriendlies",true]] call TFAR_fnc_setPluginSetting;
+["spectatorNotHearEnemies",true] call TFAR_fnc_setPluginSetting; //["spectatorNotHearEnemies",!(missionNamespace getVariable ["TFAR_spectatorCanHearEnemyUnits",false])] call TFAR_fnc_setPluginSetting;
+["spectatorCanHearFriendlies",false] call TFAR_fnc_setPluginSetting; //["spectatorCanHearFriendlies",missionNamespace getVariable ["TFAR_spectatorCanHearFriendlies",true]] call TFAR_fnc_setPluginSetting;
 ["tangentReleaseDelay",missionNamespace getVariable ["TFAR_tangentReleaseDelay",0]] call TFAR_fnc_setPluginSetting;
 ["headsetLowered",missionNamespace getVariable [QGVAR(isHeadsetLowered),false]] call TFAR_fnc_setPluginSetting;
-["moveWhileTabbedOut", missionNamespace getVariable ["TFAR_moveWhileTabbedOut", false]] call TFAR_fnc_setPluginSetting;
+["moveWhileTabbedOut", true] call TFAR_fnc_setPluginSetting; // ["moveWhileTabbedOut", missionNamespace getVariable ["TFAR_moveWhileTabbedOut", false]] call TFAR_fnc_setPluginSetting;
 ["objectInterceptionStrength", missionNamespace getVariable ["TFAR_objectInterceptionStrength", 400]] call TFAR_fnc_setPluginSetting;
 ["voiceCone", missionNamespace getVariable ["TFAR_voiceCone", true]] call TFAR_fnc_setPluginSetting;
 ["disableAutomaticMute", missionNamespace getVariable ["TFAR_disableAutoMute", false]] call TFAR_fnc_setPluginSetting;
-
+["noAutomoveSpectator", true] call TFAR_fnc_setPluginSetting; // Wasnt here before
 //If you add things that player could change in Mission call this PFH or tell players in WIKI
