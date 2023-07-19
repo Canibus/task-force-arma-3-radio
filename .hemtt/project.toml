@@ -1,0 +1,15 @@
+name = "TFAR"
+prefix = "tfar"
+mainprefix = "z"
+
+[version]
+path = "addons/core/script_version.hpp"
+
+[files]
+exclude = [
+	"README.md",
+]
+include = [
+    "./include",
+    "task_force_arrowhead_logo.paa",
+]
