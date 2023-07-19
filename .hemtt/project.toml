@@ -12,4 +12,6 @@ exclude = [
 include = [
     "./include",
     "task_force_arrowhead_logo.paa",
+    "task_force_radio_pipe.dll",
+    "task_force_radio_pipe_X64.dll",
 ]
