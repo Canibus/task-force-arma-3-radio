@@ -106,12 +106,12 @@ class HiddenButton
         1
     };
     soundPush[] = {
-        QPATHTOEF(core,sounds\softPush),
+        QPATHTOEF(core,sounds\softPush.wav),
         0.5,
         1
     };
     soundClick[] = {
-        QPATHTOEF(core,sounds\softClick),
+        QPATHTOEF(core,sounds\softClick.wav),
         0.5,
         1
     };
@@ -150,12 +150,12 @@ class HiddenRotator:HiddenButton {
 
 class HiddenFlip:HiddenButton {
     soundPush[] = {
-        QPATHTOEF(core,sounds\switchPush),
+        QPATHTOEF(core,sounds\switchPush.wav),
         0.5,
         1
     };
     soundClick[] = {
-        QPATHTOEF(core,sounds\switchClick),
+        QPATHTOEF(core,sounds\switchClick.wav),
         0.5,
         1
     };
