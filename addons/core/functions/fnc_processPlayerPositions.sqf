@@ -106,7 +106,7 @@ if (_needNearPlayerScan) then {
 
     TFAR_currentNearPlayers = TFAR_currentNearPlayers arrayIntersect TFAR_currentNearPlayers; //Remove duplicates
 
-    TFAR_currentFarPlayers = (allPlayers - TFAR_currentNearPlayers) select {isPlayer _x};
+    TFAR_currentFarPlayers = (call BIS_fnc_listPlayers - TFAR_currentNearPlayers) select {isPlayer _x};
 
     TFAR_lastPlayerScanTime = diag_tickTime;
 };
