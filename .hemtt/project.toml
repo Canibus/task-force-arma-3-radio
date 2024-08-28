@@ -6,9 +6,7 @@ mainprefix = "z"
 path = "addons/core/script_version.hpp"
 
 [files]
-exclude = [
-	"README.md",
-]
+exclude = ["README.md"]
 include = [
     "./include",
     "task_force_arrowhead_logo.paa",
@@ -16,16 +14,17 @@ include = [
     "task_force_radio_pipe_X64.dll",
 ]
 
+[hemtt.release]
+sign = false    # Default: true
+archive = false # Default: true
+
 [hemtt.launch.default]
 workshop = [
-    "463939057", # CUP Terrains - Core
-    "450814997", # CUP Terrains - Maps
     "2369477168", # Advanced Developer Tools
-
 ]
 parameters = [
-    "-skipIntro",           # These parameters are passed to the Arma 3 executable
-    "-noSplash",            # They do not need to be added to your list
-    "-showScriptErrors",    # You can add additional parameters here
+    "-skipIntro",        # These parameters are passed to the Arma 3 executable
+    "-noSplash",         # They do not need to be added to your list
+    "-showScriptErrors", # You can add additional parameters here
     "-debug",
 ]
