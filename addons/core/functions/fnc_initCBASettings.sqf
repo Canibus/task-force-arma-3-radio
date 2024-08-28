@@ -463,7 +463,7 @@
     "TFAR_rf7800str",
     1,
     {
-        TFAR_DefaultRadio_Rifleman_West = if (_this call DFUNC(isPrototypeRadio)) then {_this} else {"TFAR_rf7800str"};
+        TFAR_DefaultRadio_Rifleman_West = ["TFAR_rf7800str", _this] select (_this call DFUNC(isPrototypeRadio));
     }
 ] call CBA_Settings_fnc_init;
 [
@@ -474,7 +474,7 @@
     "TFAR_pnr1000a",
     1,
     {
-        TFAR_DefaultRadio_Rifleman_East = if (_this call DFUNC(isPrototypeRadio)) then {_this} else {"TFAR_pnr1000a"};
+        TFAR_DefaultRadio_Rifleman_East = ["TFAR_pnr1000a", _this] select (_this call DFUNC(isPrototypeRadio));
     }
 ] call CBA_Settings_fnc_init;
 [
@@ -485,7 +485,7 @@
     "TFAR_anprc154",
     1,
     {
-        TFAR_DefaultRadio_Rifleman_Independent = if (_this call DFUNC(isPrototypeRadio)) then {_this} else {"TFAR_anprc154"};
+        TFAR_DefaultRadio_Rifleman_Independent = ["TFAR_anprc154", _this] select (_this call DFUNC(isPrototypeRadio));
     }
 ] call CBA_Settings_fnc_init;
 [
@@ -496,7 +496,7 @@
     "TFAR_anprc152",
     1,
     {
-        TFAR_DefaultRadio_Personal_West = if (_this call DFUNC(isPrototypeRadio)) then {_this} else {"TFAR_anprc152"};
+        TFAR_DefaultRadio_Personal_West = ["TFAR_anprc152", _this] select (_this call DFUNC(isPrototypeRadio));
     }
 ] call CBA_Settings_fnc_init;
 [
@@ -507,7 +507,7 @@
     "TFAR_fadak",
     1,
     {
-        TFAR_DefaultRadio_Personal_East = if (_this call DFUNC(isPrototypeRadio)) then {_this} else {"TFAR_fadak"};
+        TFAR_DefaultRadio_Personal_East = ["TFAR_fadak", _this] select (_this call DFUNC(isPrototypeRadio));
     }
 ] call CBA_Settings_fnc_init;
 [
@@ -518,7 +518,7 @@
     "TFAR_anprc148jem",
     1,
     {
-        TFAR_DefaultRadio_Personal_Independent = if (_this call DFUNC(isPrototypeRadio)) then {_this} else {"TFAR_anprc148jem"};
+        TFAR_DefaultRadio_Personal_Independent = ["TFAR_anprc148jem", _this] select (_this call DFUNC(isPrototypeRadio));
     }
 ] call CBA_Settings_fnc_init;
 [
@@ -529,7 +529,7 @@
     "TFAR_rt1523g",
     1,
     {
-        TFAR_DefaultRadio_Backpack_west = if (([_this, "tf_subtype"] call DFUNC(getVehicleConfigProperty)) == "digital_lr") then {_this} else {"TFAR_rt1523g"};
+        TFAR_DefaultRadio_Backpack_west = ["TFAR_rt1523g", _this] select (([_this,"tf_subtype"] call DFUNC(getVehicleConfigProperty)) == "digital_lr");
     }
 ] call CBA_Settings_fnc_init;
 [
@@ -540,7 +540,7 @@
     "TFAR_mr3000",
     1,
     {
-        TFAR_DefaultRadio_Backpack_East = if (([_this, "tf_subtype"] call DFUNC(getVehicleConfigProperty)) == "digital_lr") then {_this} else {"TFAR_mr3000"};
+        TFAR_DefaultRadio_Backpack_East = ["TFAR_mr3000", _this] select (([_this,"tf_subtype"] call DFUNC(getVehicleConfigProperty)) == "digital_lr");
     }
 ] call CBA_Settings_fnc_init;
 [
@@ -551,7 +551,7 @@
     "TFAR_anprc155",
     1,
     {
-        TFAR_DefaultRadio_Backpack_Independent = if (([_this, "tf_subtype"] call DFUNC(getVehicleConfigProperty)) == "digital_lr") then {_this} else {"TFAR_anprc155"};
+        TFAR_DefaultRadio_Backpack_Independent = ["TFAR_anprc155", _this] select (([_this,"tf_subtype"] call DFUNC(getVehicleConfigProperty)) == "digital_lr");
     }
 ] call CBA_Settings_fnc_init;
 [
@@ -562,7 +562,7 @@
     "TFAR_anarc210",
     1,
     {
-        TFAR_DefaultRadio_Airborne_West = if (([_this, "tf_subtype"] call DFUNC(getVehicleConfigProperty)) == "airborne") then {_this} else {"TFAR_anarc210"};
+        TFAR_DefaultRadio_Airborne_West = ["TFAR_anarc210", _this] select (([_this,"tf_subtype"] call DFUNC(getVehicleConfigProperty)) == "airborne");
     }
 ] call CBA_Settings_fnc_init;
 [
@@ -573,7 +573,7 @@
     "TFAR_mr6000l",
     1,
     {
-        TFAR_DefaultRadio_Airborne_east = if (([_this, "tf_subtype"] call DFUNC(getVehicleConfigProperty)) == "airborne") then {_this} else {"TFAR_mr6000l"};
+        TFAR_DefaultRadio_Airborne_east = ["TFAR_mr6000l", _this] select (([_this,"tf_subtype"] call DFUNC(getVehicleConfigProperty)) == "airborne");
     }
 ] call CBA_Settings_fnc_init;
 [
@@ -584,7 +584,7 @@
     "TFAR_anarc164",
     1,
     {
-        TFAR_DefaultRadio_Airborne_Independent = if (([_this, "tf_subtype"] call DFUNC(getVehicleConfigProperty)) == "airborne") then {_this} else {"TFAR_anarc164"};
+        TFAR_DefaultRadio_Airborne_Independent = ["TFAR_anarc164", _this] select (([_this,"tf_subtype"] call DFUNC(getVehicleConfigProperty)) == "airborne");
     }
 ] call CBA_Settings_fnc_init;
 [

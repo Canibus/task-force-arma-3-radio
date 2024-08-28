@@ -32,4 +32,4 @@ for "_i" from 0 to _channels step 1 do {
     _frequencies pushBack ((random (_max_freq - _min_freq)) + _min_freq);
 };
 
-_frequencies apply {QTFAR_ROUND_FREQUENCYP(_x, _freq_rp)}
+_frequencies apply {QTFAR_ROUND_FREQUENCYP(_x,_freq_rp)}

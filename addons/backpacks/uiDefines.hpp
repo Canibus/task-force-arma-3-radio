@@ -1,5 +1,3 @@
-#include "\z\tfar\addons\core\defines.hpp"
-
 class RscBackPicture;
 class RscEditLCD;
 class HiddenButton;
@@ -29,7 +27,6 @@ class HiddenFlip;
 #define IDC_RT1523G_CHANNEL_09   1709
 #define IDC_RT1523G_STEREO  1710
 #define IDC_RT1523G_ADDITIONAL ID_ADDITIONAL
-#define IDC_RT1523G_SPEAKERS ID_SPEAKERS
 
 
 //--- mr3000

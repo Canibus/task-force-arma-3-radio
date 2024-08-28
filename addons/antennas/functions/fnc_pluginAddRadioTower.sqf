@@ -19,7 +19,7 @@
   Public: yes
 */
 
-TRACE_1("TFAR_antennas_fnc_pluginAddRadioTower", _this);
+TRACE_1("TFAR_antennas_fnc_pluginAddRadioTower",_this);
 
 for "_y" from 0 to (count _this)-1 step 50 do { //Only 50 per call to not exceed max message length
     private _towersToProcess = (_this select [_y,50]);

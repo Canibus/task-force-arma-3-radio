@@ -98,7 +98,7 @@ class anprc154_radio_dialog {
         w = QUOTE(0.0309222 * safezoneW);
         h = QUOTE(0.0395915 * safezoneH);
         action = QUOTE( \
-            [ARR_2(TF_sw_dialog_radio, ((TF_sw_dialog_radio call TFAR_fnc_getCurrentSwStereo) + 1) mod TFAR_MAX_STEREO)] call TFAR_fnc_setSwStereo; \
+            [ARR_2(TF_sw_dialog_radio,((TF_sw_dialog_radio call TFAR_fnc_getCurrentSwStereo) + 1) mod TFAR_MAX_STEREO)] call TFAR_fnc_setSwStereo; \
             [TF_sw_dialog_radio] call TFAR_fnc_showRadioVolume; \
         );
         tooltip = ECSTRING(core,stereo_settings);
@@ -181,7 +181,7 @@ class anprc154_radio_dialog {
         font = "TFAR_font_dots";
         shadow = 2;
         action = QUOTE( \
-            ctrlSetText [ARR_2(IDC_MICRODAGR_EDIT, '')]; \
+            ctrlSetText [ARR_2(IDC_MICRODAGR_EDIT,'')]; \
             ctrlSetFocus ((findDisplay IDD_ANPRC152_RADIO_DIALOG) displayCtrl IDC_MICRODAGR_EDIT); \
         );
     };

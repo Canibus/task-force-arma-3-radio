@@ -1,5 +1,3 @@
-#include "\z\tfar\addons\core\defines.hpp"
-
 #define TF_IDD_BACKGROUND 67676
 //--- anprc152_radio_dialog
 #define IDD_ANPRC152_RADIO_DIALOG  1333

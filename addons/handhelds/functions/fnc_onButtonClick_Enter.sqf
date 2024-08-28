@@ -30,6 +30,6 @@ if ((_frequency >= TFAR_MIN_SW_FREQ) and {_frequency <= TFAR_MAX_SW_FREQ}) then 
     ["OnFrequencyChangedFromUI", [TFAR_currentUnit, TF_sw_dialog_radio, QTFAR_ROUND_FREQUENCY(_frequency)]] call TFAR_fnc_fireEventHandlers;
     call TFAR_fnc_hideHint;
 } else {
-    hint formatText [ARR_3(localize 'STR_TFAR_CORE_incorrect_frequency', TFAR_MIN_SW_FREQ, TFAR_MAX_SW_FREQ)]
+    hint formatText [ARR_3(localize 'STR_TFAR_CORE_incorrect_frequency',TFAR_MIN_SW_FREQ,TFAR_MAX_SW_FREQ)]
 };
 call TFAR_fnc_updateSWDialogToChannel;

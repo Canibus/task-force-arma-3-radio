@@ -138,7 +138,7 @@ class fadak_radio_dialog {
         w = QUOTE(0.0164063 * safezoneW);
         h = QUOTE(0.0252056 * safezoneH);
         action = QUOTE( \
-            [ARR_2(TF_sw_dialog_radio, ((TF_sw_dialog_radio call TFAR_fnc_getCurrentSwStereo) + 1) mod TFAR_MAX_STEREO)] call TFAR_fnc_setSwStereo; \
+            [ARR_2(TF_sw_dialog_radio,((TF_sw_dialog_radio call TFAR_fnc_getCurrentSwStereo) + 1) mod TFAR_MAX_STEREO)] call TFAR_fnc_setSwStereo; \
             [TF_sw_dialog_radio] call TFAR_fnc_showRadioVolume; \
         );
         tooltip = ECSTRING(core,stereo_settings);

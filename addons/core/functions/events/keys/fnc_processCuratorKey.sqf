@@ -15,6 +15,6 @@ private _processKeys = {
      };
 };
 
-[if (_keyup) then {cba_events_keyhandlers_up} else {cba_events_keyhandlers_down}, _processKeys] call CBA_fnc_hashEachPair;
+[[cba_events_keyhandlers_down, cba_events_keyhandlers_up] select (_keyup), _processKeys] call CBA_fnc_hashEachPair;
 
 _result;

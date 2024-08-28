@@ -56,7 +56,7 @@ private _frontRightCorner = _boundingBox select 1;
 _externalIntercomInset = [(_frontRightCorner select 0) * _widthFactor, _backLeftCorner select 1, ((_centerOfMass select 2) * _heightFactor)];
 _externalIntercomPoint = lineIntersectsSurfaces [AGLToASL (_vehicle modelToWorld _externalIntercomInset), AGLToASL (_vehicle modelToWorld _centerOfMass)] select 0 select 0;
 
-TRACE_1("Calculated Position set to: %1", _vehicle worldToModel ASLToAGL _externalIntercomPoint);
+TRACE_1("Calculated Position set to: %1",_vehicle worldToModel ASLToAGL _externalIntercomPoint);
 private _position = _vehicle worldToModel ASLToAGL _externalIntercomPoint;
 EGVAR(core,VehicleConfigCacheNamespace) setVariable [_cacheName, _position];
 _position;

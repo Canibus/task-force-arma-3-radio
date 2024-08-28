@@ -50,4 +50,4 @@ if (_hasIntercom) then {
 
 (_unit call TFAR_fnc_isTurnedOut) params ["_turnedOut", "_isolation"];
 
-[_netID, if (_turnedOut) then {"turnout"} else {_isolation}, _intercomSlot, velocity _unit] joinString (toString [16])
+[_netID, [_isolation, "turnout"] select (_turnedOut), _intercomSlot, velocity _unit] joinString (toString [16])

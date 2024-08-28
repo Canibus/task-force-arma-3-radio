@@ -86,7 +86,7 @@ class rf7800str_radio_dialog {
         w = QUOTE(0.015 * safezoneW);
         h = QUOTE(0.02 * safezoneH);
         action = QUOTE( \
-            [ARR_2(TF_sw_dialog_radio, ((TF_sw_dialog_radio call TFAR_fnc_getCurrentSwStereo) + 1) mod TFAR_MAX_STEREO)] call TFAR_fnc_setSwStereo; \
+            [ARR_2(TF_sw_dialog_radio,((TF_sw_dialog_radio call TFAR_fnc_getCurrentSwStereo) + 1) mod TFAR_MAX_STEREO)] call TFAR_fnc_setSwStereo; \
             [TF_sw_dialog_radio] call TFAR_fnc_showRadioVolume; \
         );
         tooltip = ECSTRING(core,stereo_settings);
@@ -160,7 +160,7 @@ class rf7800str_radio_dialog {
         font = "TFAR_font_dots";
         shadow = 2;
         action = QUOTE( \
-            ctrlSetText [ARR_2(IDC_MICRODAGR_EDIT, '')]; \
+            ctrlSetText [ARR_2(IDC_MICRODAGR_EDIT,'')]; \
             ctrlSetFocus ((findDisplay IDD_RF7800STR_RADIO_DIALOG) displayCtrl IDC_MICRODAGR_EDIT); \
         );
     };

@@ -142,7 +142,7 @@ if (_wireless) then {
         _vehicle setVariable ["TFAR_ExternalIntercomRopeEH",
             _vehicle addEventHandler ["RopeBreak", {
                 params ["_vehicle", "_ropeID"];
-                TRACE_1("Rope broke", _this);
+                TRACE_1("Rope broke",_this);
 
                 if ((_vehicle getVariable ["TFAR_ExternalIntercomRopeIDs", [nil, nil]] select 0) isEqualTo _ropeID) then {
                     [_vehicle, _vehicle getVariable ["TFAR_ExternalIntercomSpeakers", [objNull, []]] select 0] call TFAR_external_intercom_fnc_disconnect;
@@ -150,7 +150,7 @@ if (_wireless) then {
                 };
             }]
         ];
-        TRACE_1("Registered RopeBreak EH", _vehicle getVariable "TFAR_ExternalIntercomRopeEH");
+        TRACE_1("Registered RopeBreak EH",_vehicle getVariable "TFAR_ExternalIntercomRopeEH");
     };
 
     _playerEventhandlers pushBack [
