@@ -44,18 +44,24 @@
             <Italian>Telefono iterfono già in uso</Italian>
         </Key>
         <Key ID="STR_TFAR_EXTERNAL_INTERCOM_SOMEONE_USING_PHONE">
-            <Original><br /><br /><t align='center'>%1 is currently using the Intercom Phone</t></Original>
-            <English><br /><br /><t align='center'>%1 is currently using the Intercom Phone</t></English>
-            <Czech><br /><br /><t align='center'>%1 momentálně používá telefon interkomu</t></Czech>
-            <Russian><br /><br /><t align='center'>%1 сейчас использует телефон интеркома</t></Russian>
-            <Italian><br /><br /><t align='center'>%1 sta già usando il telefono dell'interfono</t></Italian>
+            <Original>is currently using the Intercom Phone</Original>
+            <English>is currently using the Intercom Phone</English>
+            <Czech>momentálně používá telefon interkomu</Czech>
+            <Russian>сейчас использует телефон интеркома</Russian>
+            <Italian>sta già usando il telefono dell'interfono</Italian>
+        </Key>
+        <Key ID="STR_TFAR_EXTERNAL_INTERCOM_YOUR_DEVICE">
+            <Original>Your device</Original>
+            <English>Your device</English>
+            <Czech>Tvůj</Czech>
+            <Russian>Твое устройство</Russian>
         </Key>
         <Key ID="STR_TFAR_EXTERNAL_INTERCOM_HEADGEAR_NOT_WIRELESS_CAPABLE">
-            <Original><br /><br /><t align='center'>Your %1 is not Wireless Intercom capable</t></Original>
-            <English><br /><br /><t align='center'>Your %1 is not Wireless Intercom capable</t></English>
-            <Czech><br /><br /><t align='center'>Tvůj %1 není schopno bezdrátového spojení</t></Czech>
-            <Russian><br /><br /><t align='center'>Твое устройство %1 не подходит для беспроводного интеркома</t></Russian>
-            <Italian><br /><br /><t align='center'>%1 non è un interfono wireless</t></Italian>
+            <Original>is not Wireless Intercom capable</Original>
+            <English>is not Wireless Intercom capable</English>
+            <Czech>není schopno bezdrátového spojení</Czech>
+            <Russian>не подходит для беспроводного интеркома</Russian>
+            <Italian>non è un interfono wireless</Italian>
         </Key>
         <Key ID="STR_TFAR_EXTERNAL_INTERCOM_RESET">
             <Original>External Intercom has been Reset</Original>
