@@ -17,7 +17,7 @@
 #define MAX_RADIO_COUNT 1000
 
 #define TFAR_FREQ_OFFSET 2
-#define TFAR_FREQ_ROUND_POWER 10// (log x) decimals after decimal point 10 = 1.1, 100 = 1.11
+#define TFAR_FREQ_ROUND_POWER 100// (log x) decimals after decimal point 10 = 1.1, 100 = 1.11
 
 #define TFAR_ROUND_FREQUENCYP(frequency,pwr) (round (frequency * pwr) / pwr)
 #define QTFAR_ROUND_FREQUENCYP(frequency,pwr) (if (( (round(frequency*pwr)) mod pwr) == 0) then {frequency toFixed 0} else {frequency toFixed (log pwr)})
@@ -28,12 +28,12 @@
 #define TFAR_FREQUENCYSTRING_TO_FREQNUMBER(frequency) parseNumber ( ((frequency) splitString ",.") joinString "." )
 
 #define TFAR_MAX_CHANNELS 8
-#define TFAR_MIN_SW_FREQ 30
+#define TFAR_MIN_SW_FREQ 1
 #define TFAR_MAX_SW_FREQ 512
 
 #define TFAR_MAX_LR_CHANNELS 9
 
-#define TFAR_MIN_ASIP_FREQ 30
+#define TFAR_MIN_ASIP_FREQ 1
 #define TFAR_MAX_ASIP_FREQ 87
 
 #define TFAR_SW_STEREO_OFFSET 3
