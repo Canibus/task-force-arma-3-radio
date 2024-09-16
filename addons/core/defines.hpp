@@ -17,7 +17,7 @@
 #define MAX_RADIO_COUNT 1000
 
 #define TFAR_FREQ_OFFSET 2
-#define TFAR_FREQ_ROUND_POWER 10 // (log x) decimals after decimal point 10 = 1.1, 100 = 1.11
+#define TFAR_FREQ_ROUND_POWER 10// (log x) decimals after decimal point 10 = 1.1, 100 = 1.11
 
 #define TFAR_ROUND_FREQUENCYP(frequency,pwr) (round (frequency * pwr) / pwr)
 #define QTFAR_ROUND_FREQUENCYP(frequency,pwr) (if (( (round(frequency*pwr)) mod pwr) == 0) then {frequency toFixed 0} else {frequency toFixed (log pwr)})

@@ -21,6 +21,8 @@ archive = false # Default: true
 [hemtt.launch.default]
 workshop = [
     "2369477168", # Advanced Developer Tools
+    "450814997",  # CBA
+    "463939057",  # ACE3
 ]
 parameters = [
     "-skipIntro",        # These parameters are passed to the Arma 3 executable
