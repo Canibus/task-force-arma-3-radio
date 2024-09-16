@@ -3439,6 +3439,21 @@ Normal radyo su altı radyosuyla iletişim kuramaz (herhangi bir ses gelmez). Da
             <Italian>Equipaggio</Italian>
             <Czech>Posádka</Czech>
         </Key>
+        <Key ID="STR_TFAR_Core_Intercom_ACESelfAction_MiscChannel1">
+            <Original>Misc channel 1</Original>
+            <English>Misc channel 1</English>
+            <Russian>Канал 1</Russian>
+        </Key>
+        <Key ID="STR_TFAR_Core_Intercom_ACESelfAction_MiscChannel2">
+            <Original>Misc channel 2</Original>
+            <English>Misc channel 2</English>
+            <Russian>Канал 2</Russian>
+        </Key>
+        <Key ID="STR_TFAR_Core_Intercom_ACESelfAction_MiscChannel3">
+            <Original>Misc channel 3</Original>
+            <English>Misc channel 3</English>
+            <Russian>Канал 3</Russian>
+        </Key>
         <Key ID="STR_TFAR_CORE_Main_Desc">
             <Original>War is not only about moving, waiting and engaging targets. It is also about communication. Task Force Arrowhead Radio provides a way to dramatically increase gameplay realism and atmosphere by seamless integration with TeamSpeak.</Original>
             <English>War is not only about moving, waiting and engaging targets. It is also about communication. Task Force Arrowhead Radio provides a way to dramatically increase gameplay realism and atmosphere by seamless integration with TeamSpeak.</English>

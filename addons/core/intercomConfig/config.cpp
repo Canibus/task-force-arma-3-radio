@@ -42,17 +42,17 @@ class CfgPatches {
             statement = QUOTE((vehicle ACE_Player) setVariable [ARR_3(Intercom_Variable,1,true)];); \
         }; \
         class TFAR_IntercomChannel_Misc_1 { \
-            displayName = "Misc channel 1"; \
+            displayName = CSTRING(Intercom_ACESelfAction_MiscChannel1); \
             condition = QUOTE(Intercom_Condition(2)); \
             statement = QUOTE((vehicle ACE_Player) setVariable [ARR_3(Intercom_Variable,2,true)];); \
         }; \
         class TFAR_IntercomChannel_Misc_2 { \
-            displayName = "Misc channel 2"; \
+            displayName = CSTRING(Intercom_ACESelfAction_MiscChannel2); \
             condition = QUOTE(Intercom_Condition(3)); \
             statement = QUOTE((vehicle ACE_Player) setVariable [ARR_3(Intercom_Variable,3,true)];); \
         }; \
         class TFAR_IntercomChannel_Misc_3 { \
-            displayName = "Misc channel 3"; \
+            displayName = CSTRING(Intercom_ACESelfAction_MiscChannel3); \
             condition = QUOTE(Intercom_Condition(4)); \
             statement = QUOTE((vehicle ACE_Player) setVariable [ARR_3(Intercom_Variable,4,true)];); \
         }; \
