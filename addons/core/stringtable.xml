@@ -99,6 +99,22 @@
                 <Chinesesimp>TFAR无线电 (Altis政府军)</Chinesesimp>
                 <Italian>Radio TFAR (AAF)</Italian>
             </Key>
+            <Key ID="STR_TFAR_Vehicle_ID_override">
+                <Original>Vehicle ID override</Original>
+                <Russian>Идентификатор ТС</Russian>
+            </Key>
+            <Key ID="STR_TFAR_Vehicle_ID_override_desc">
+                <Original>Vehicles that share the same Vehicle ID share the same Intercom system.</Original>
+                <Russian>Транспортные средства, имеющие одинаковый идентификатор транспортного средства, используют одну и ту же систему внутренней связи.</Russian>
+            </Key>
+             <Key ID="STR_TFAR_Intercom_Channel_Default">
+                <Original>Default Intercom Channel</Original>
+                <Russian>Канал внутренней связи по умолчанию</Russian>
+            </Key>
+            <Key ID="STR_TFAR_Intercom_Channel_Default_Desc">
+                <Original>Default Intercom Channel when entering vehicle. Overwrites global setting. (-1 means Intercom disabled by default, -2 means this setting is ignored)</Original>
+                <Russian>Канал внутренней связи по умолчанию при входе в автомобиль. Перезаписывает глобальную настройку. (-1 означает, что переговорное устройство отключено по умолчанию, -2 означает, что эта настройка игнорируется)</Russian>
+            </Key>
         </Container>
         <Container name="WarningMessage">
             <Key ID="STR_TFAR_CORE_WM_Singleplayer">
