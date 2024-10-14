@@ -1,6 +1,7 @@
 #include "script_component.hpp"
 #pragma hemtt suppress pw3_padded_arg config
-
+#define back_Load	190
+#define back_mass	40
 class CfgPatches {
   class ADDON {
       units[] = {

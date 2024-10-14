@@ -8,8 +8,8 @@ class TFAR_rt1523g: TFAR_Bag_Base {
     model=QPATHTOF(models\clf_prc117g_ap);
     hiddenSelections[] = {"camo"};
     hiddenSelectionsTextures[] = {QPATHTOF(models\data\clf_prc117g_ap_co.paa)};
-    maximumLoad = 50;
-    mass = 80;
+    maximumLoad = back_Load;
+    mass = back_mass;
     tf_encryptionCode = "tf_west_radio_code";
     tf_dialog = "rt1523g_radio_dialog";
     tf_subtype = "digital_lr";
@@ -33,8 +33,8 @@ class TFAR_rt1523g_big: TFAR_rt1523g {
     author = "Raspu, Gandi, Nkey";
     displayName = CSTRING(RT1523G_Big);
     descriptionShort = CSTRING(RT1523G_Big_Desc);
-    maximumLoad = 160;
-    mass = 160;
+    maximumLoad = back_Load;
+    mass = back_mass;
     hiddenSelections[] = {"camo"};
     hiddenSelectionsTextures[] = {QPATHTOF(models\data\clf_nicecomm2_nato_multi_co.paa)};
     model=QPATHTOF(models\clf_nicecomm2);
@@ -62,8 +62,8 @@ HIDDEN_CLASS(tf_rt1523g_big_rhs : TFAR_rt1523g_big_rhs); //#Deprecated dummy cla
 class TFAR_rt1523g_sage: TFAR_rt1523g {
     displayName = CSTRING(RT1523G_Sage);
     descriptionShort = CSTRING(RT1523G_Sage_Desc);
-    maximumLoad = 100;
-    mass = 120;
+    maximumLoad = back_Load;
+    mass = back_mass;
     hiddenSelections[] = {"camo"};
     hiddenSelectionsTextures[] = {QPATHTOF(models\data\camo\backpack_sage_co.paa)};
     model = QPATHTOF(models\TFR_BACKPACK);

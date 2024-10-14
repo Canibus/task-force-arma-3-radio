@@ -5,8 +5,8 @@ class TFAR_anprc155: TFAR_Bag_Base {
     displayName = CSTRING(ANPRC155);
     descriptionShort = CSTRING(ANPRC155_Desc);
     picture = QPATHTOF(anprc155\ui\155_icon.paa);
-    maximumLoad = 160;
-    mass = 160;
+    maximumLoad = back_Load;
+    mass = back_mass;
     model=QPATHTOF(models\clf_nicecomm2);
     hiddenSelections[] = {"camo"};
     hiddenSelectionsTextures[] = {QPATHTOF(models\data\clf_nicecomm2_aff_digital_co.paa)};

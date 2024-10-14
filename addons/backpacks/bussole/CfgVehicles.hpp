@@ -5,8 +5,8 @@ class TFAR_bussole: TFAR_Bag_Base {
     displayName = CSTRING(Bussole);
     descriptionShort = CSTRING(Bussole_Desc);
     picture = QPATHTOF(bussole\ui\bussole_icon.paa);
-    maximumLoad = 30;
-    mass = 120;
+    maximumLoad = back_Load;
+    mass = back_mass;
     model=QPATHTOF(models\tf_bussole);
     hiddenSelections[] = {"camo"};
     hiddenSelectionsTextures[] = {""};

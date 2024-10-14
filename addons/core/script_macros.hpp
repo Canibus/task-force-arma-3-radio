@@ -90,7 +90,7 @@
  //usable and visible
 #define PUBLIC 2
 #define ALL_SCOPES_HIDDEN scope = 1;scopeCurator = 1;scopeArsenal = 1;
-#define HIDDEN_CLASS(name) class name {scope = 1;scopeCurator = 1;scopeArsenal = 1; displayName = QUOTE(name deprecated item);}
+#define HIDDEN_CLASS(name) class name {scope = 1;scopeCurator = 1;scopeArsenal = 1;}
 
 
 

@@ -7,8 +7,8 @@ class TFAR_anarc164: TFAR_Bag_Base {
     model = QPATHTOF(models\TFR_BACKPACK);
     hiddenSelections[] = {"camo"};
     hiddenSelectionsTextures[] = {QPATHTOF(models\data\camo\backpack_dpcu_co.paa)};
-    maximumLoad = 20;
-    mass = 160;
+    maximumLoad = back_Load;
+    mass = back_mass;
     tf_range = 40000;
     tf_encryptionCode = "tf_independent_radio_code";
     tf_dialog = "anarc164_radio_dialog";
