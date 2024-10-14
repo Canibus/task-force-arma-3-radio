@@ -5,8 +5,8 @@ class TFAR_mr3000: TFAR_Bag_Base {
     displayName = CSTRING(MR3000);
     descriptionShort = CSTRING(MR3000_Desc);
     picture = QPATHTOF(mr3000\ui\mr3000_icon.paa);
-    maximumLoad = 160;
-    mass = 160;
+    maximumLoad = back_Load;
+    mass = back_mass;
     model = QPATHTOF(models\clf_nicecomm2_prc117g);
     hiddenSelections[] = {"camo"};
     hiddenSelectionsTextures[] = {QPATHTOF(models\data\clf_nicecomm2_csat_multi_co.paa)};
