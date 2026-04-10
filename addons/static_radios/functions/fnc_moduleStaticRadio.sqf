@@ -53,7 +53,7 @@ private _fnc_onUnload = {
 
 private _fnc_onConfirm = {
     params [["_ctrlButtonOK", controlNull, [controlNull]]];
-    //_ctrlButtonOK ctrlRemoveAllEventHandlers "buttonClick"; //This crashes Arma! https://feedback.bistudio.com/T121356
+    //_ctrlButtonOK ctrlRemoveAllEventHandlers "ButtonClick"; //This crashes Arma! https://feedback.bistudio.com/T121356
     private _display = ctrlparent _ctrlButtonOK;
     if (isNull _display) exitWith {};
 

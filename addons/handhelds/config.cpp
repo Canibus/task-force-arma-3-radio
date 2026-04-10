@@ -27,7 +27,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "A3_Modules_F",
-            "A3_UI_F",
+            "A3_Ui_F",
             "A3_Structures_F_Items_Electronics",
             "A3_Weapons_F_ItemHolders",
             "tfar_core",

@@ -27,7 +27,7 @@ private _result = "task_force_radio_pipe" callExtension _request;
 
 _splitResult = _result splitString "";
 
-if ((_result != "OK") and {(count _splitResult) != 2}) then {
+if (_result != "OK") then {
 
     if (GVAR(noTSNotConnectedHint) && {_result == "Not connected to TeamSpeak"}) exitWith {};
 
@@ -40,28 +40,7 @@ if ((_result != "OK") and {(count _splitResult) != 2}) then {
     };
 };
 
-private _isSpeaking = (_splitResult select 0) == "1";
-private _isReceiving = (_splitResult param [1,""]) == "1";
-
-if (_isSpeaking) then {
-    _player setVariable ["TFAR_speakingSince", diag_tickTime];
-};
-
-_player setRandomLip _isSpeaking;
-//Only want to fire EH once
-if !((_player getVariable ["TFAR_isSpeaking", false]) isEqualTo _isSpeaking) then {
-    _player setVariable ["TFAR_isSpeaking", _isSpeaking];
-    _player setVariable ["TF_isSpeaking", _isSpeaking];//#Deprecated variable
-    ["OnSpeak", [_player, _isSpeaking]] call TFAR_fnc_fireEventHandlers;
-};
-
-if !((_player getVariable ["TFAR_isReceiving", false]) isEqualTo _isReceiving) then {
-    _player setVariable ["TFAR_isReceiving", _isReceiving];
-    ["OnRadioReceive", [_player, _isReceiving]] call TFAR_fnc_fireEventHandlers;
-};
-
-
-
+//#TODO this is a bad place to do it, why check every update...
 if !(_player getVariable ["TFAR_killedEHAttached",false]) then {
     _player addEventHandler ["Killed", {_player call TFAR_fnc_sendPlayerKilled}];
     _player setVariable ["TFAR_killedEHAttached", true];

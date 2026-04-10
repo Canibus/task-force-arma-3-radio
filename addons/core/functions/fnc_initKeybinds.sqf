@@ -207,3 +207,9 @@ private _fnc_localizeLRChannel = {
     systemChat "I logged stuff! Look in TS for path";
     hint "I logged stuff! Look in TS for path";
 },[0, [false, false, false]], false] call cba_fnc_addKeybind;
+
+["TFAR", "SRVolumeUp", [localize LSTRING(key_SRVolumeUp),localize LSTRING(key_SRVolumeUp)], {[1] call TFAR_fnc_onSwVolumeChange}, {true}, [0, [false,false,false]],false] call CBA_fnc_addKeybind;
+["TFAR", "SRVolumeDown", [localize LSTRING(key_SRVolumeDown),localize LSTRING(key_SRVolumeDown)], {[0] call TFAR_fnc_onSwVolumeChange}, {true}, [0, [false,false,false]],false] call CBA_fnc_addKeybind;
+
+["TFAR", "LRVolumeUp", [localize LSTRING(key_LRVolumeUp),localize LSTRING(key_LRVolumeUp)], {[1] call TFAR_fnc_onLrVolumeChange}, {true}, [0, [false,false,false]],false] call CBA_fnc_addKeybind;
+["TFAR", "LRVolumeDown", [ localize LSTRING(key_LRVolumeDown), localize LSTRING(key_LRVolumeDown)], {[0] call TFAR_fnc_onLrVolumeChange}, {true},[0, [false,false,false]],false] call CBA_fnc_addKeybind;

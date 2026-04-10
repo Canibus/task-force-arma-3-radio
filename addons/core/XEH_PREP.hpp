@@ -6,6 +6,9 @@ PREP_SUB2(ACEInteraction,getStereoChildren);
 PREP_SUB2(ACEInteraction,getTakeChildren);
 PREP_SUB2(ACEInteraction,takeRadio);
 
+PREP_SUB(stats,statCondition_encryptionCode);
+PREP_SUB(stats,statCondition_isRadio);
+
 // /Events
 PREP_SUB(events\handler,addEventHandler);
 PREP_SUB(events\handler,fireEventHandlers);
@@ -32,6 +35,8 @@ PREP_SUB(events\keys,processLRStereoKeys);
 PREP_SUB(events\keys,processSWChannelKeys);
 PREP_SUB(events\keys,processSWCycleKeys);
 PREP_SUB(events\keys,processSWStereoKeys);
+PREP_SUB(events\keys,onSwVolumeChange);
+PREP_SUB(events\keys,onLRVolumeChange);
 
 PREP_SUB(events\ui,onSwDialogOpen);
 PREP_SUB(events\ui,onLRDialogOpen);
@@ -60,6 +65,11 @@ PREP_SUB(hint,showRadioInfo);
 PREP_SUB(hint,showRadioSpeakers);
 PREP_SUB(hint,showRadioVolume);
 PREP_SUB(hint,unableToUseHint);
+
+// /intercom
+PREP_SUB(intercom,canSetIntercomChannel);
+PREP_SUB(intercom,getIntercomChannel);
+PREP_SUB(intercom,setIntercomChannel);
 
 // /plugin
 PREP_SUB(plugin,betaTracker); //#TODO remove on release
@@ -178,6 +188,7 @@ PREP(loadoutReplaceProcess);
 PREP(lrRadiosList);
 // O
 PREP(objectInterception);
+PREP(objectInterceptionBulkToCache);
 // P
 PREP(parseFrequenciesInput);
 PREP(preparePositionCoordinates);

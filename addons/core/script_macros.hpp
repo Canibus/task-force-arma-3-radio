@@ -1,7 +1,7 @@
 #include "\x\cba\addons\main\script_macros_common.hpp"
 #include "\x\cba\addons\xeh\script_xeh.hpp"
 
-#include "defines.hpp"
+#include "\z\tfar\addons\core\defines.hpp"
 
 //From https://github.com/acemod/ACE3
 
@@ -67,15 +67,20 @@
                 condition = QUOTE(true); \
                 statement = ""; \
                 icon = ""; \
+                class TFAR_IntercomChannel_disabled { \
+                    displayName = "Disabled"; \
+                    condition = QUOTE([ARR_3(_target,_player,-1)] call TFAR_fnc_canSetIntercomChannel); \
+                    statement = QUOTE([ARR_3(_target,_player,-1)] call TFAR_fnc_setIntercomChannel); \
+                }; \
                 class TFAR_IntercomChannel_1 { \
                     displayName = CSTRING(Intercom_ACESelfAction_Channel1); \
-                    condition = QUOTE(true); \
-                    statement = "(vehicle ACE_Player) setVariable [format ['TFAR_IntercomSlot_%1',(netID ACE_Player)],0,true];"; \
+                    condition = QUOTE([ARR_3(_target,_player,0)] call TFAR_fnc_canSetIntercomChannel); \
+                    statement = QUOTE([ARR_3(_target,_player,0)] call TFAR_fnc_setIntercomChannel); \
                 }; \
                 class TFAR_IntercomChannel_2 { \
                     displayName = CSTRING(Intercom_ACESelfAction_Channel2); \
-                    condition = QUOTE(true); \
-                    statement = "(vehicle ACE_Player) setVariable [format ['TFAR_IntercomSlot_%1',(netID ACE_Player)],1,true];"; \
+                    condition = QUOTE([ARR_3(_target,_player,1)] call TFAR_fnc_canSetIntercomChannel); \
+                    statement = QUOTE([ARR_3(_target,_player,1)] call TFAR_fnc_setIntercomChannel); \
                 }; \
             }; \
         }; \
@@ -83,14 +88,11 @@
 }
 
 //config scopes
-//unusable - only for inheritance
-#define PRIVATE 0
-//Hidden in Editor/Curator/Arsenal
-#define HIDDEN 1
- //usable and visible
-#define PUBLIC 2
+#define PRIVATE 0 //unusable - only for inheritance
+#define HIDDEN 1 //Hidden in Editor/Curator/Arsenal
+#define PUBLIC 2 //usable and visible
 #define ALL_SCOPES_HIDDEN scope = 1;scopeCurator = 1;scopeArsenal = 1;
-#define HIDDEN_CLASS(name) class name {scope = 1;scopeCurator = 1;scopeArsenal = 1;}
+#define HIDDEN_CLASS(name) class name {scope = 1;scopeCurator = 1;scopeArsenal = 1; displayName = QUOTE(name deprecated item);}
 
 
 

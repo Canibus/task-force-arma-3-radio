@@ -13,7 +13,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "A3_Modules_F",
-            "A3_UI_F",
+            "A3_Ui_F",
             "cba_main",
             "cba_ui",
             "cba_xeh",
@@ -136,10 +136,10 @@ class ace_arsenal_stats {
         scope = 2;
         priority = 1;
         stats[] = {"tf_encryptionCode"};
-        displayName = "Encryption Code";//#Todo Translate
+        displayName = CSTRING(radio_encryption_code);
         showText= 1;
         textStatement = QUOTE(params [ARR_2('_stat', '_config')]; private _enc = getText (_config >> _stat select 0); _enc);
-        condition = QUOTE(params [ARR_2('_stat', '_config')]; isText (_config >> _stat select 0) && (getText (_config >> _stat select 0) != ''));
+        condition = QUOTE(call FUNC(statCondition_encryptionCode));
         tabs[] = {{12, 5}, {}};
     };
 };

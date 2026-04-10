@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project name="TFAR">
     <Package name="antennas">
         <Key ID="STR_TFAR_ANTENNAS_TOWERNAME">
@@ -6,14 +6,14 @@
             <English>Communication Tower (TFAR)</English>
             <Czech>Vysílač (TFAR)</Czech>
             <French>Tour de communication (TFAR)</French>
-            <German>Kommunikationsturm (TFAR)</German>
+            <Spanish>Torre de comunicaciones (TFAR)</Spanish>
             <Italian>Torre comunicazioni (TFAR)</Italian>
             <Polish>Wieża komunikacyjna (TFAR)</Polish>
             <Portuguese>Torre de comunicação (TFAR)</Portuguese>
             <Russian>Радиовышка (TFAR)</Russian>
-            <Spanish>Torre de comunicaciones (TFAR)</Spanish>
-            <Japanese>電波塔 (TFAR)</Japanese>
+            <German>Kommunikationsturm (TFAR)</German>
             <Korean>통신탑 (TFAR)</Korean>
+            <Japanese>電波塔 (TFAR)</Japanese>
             <Chinese>通訊塔 (TFAR)</Chinese>
             <Chinesesimp>通信塔 (TFAR)</Chinesesimp>
             <Turkish>Telsiz Kulesi (TFAR)</Turkish>

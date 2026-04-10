@@ -23,7 +23,7 @@
 params ["_target", "_player", "_params"];
 
 _vehicle = _player getVariable "TFAR_ExternalIntercomVehicle";
-private _intercomRootClass = configFile >> "CfgVehicles" >> typeOf _vehicle >> "ACE_SelfActions" >> "TFAR_IntercomChannel";
+private _intercomRootClass = configOf _vehicle >> "ACE_SelfActions" >> "TFAR_IntercomChannel";
 private _intercomChannels = (_intercomRootClass) call BIS_fnc_getCfgSubClasses;
 private _channelId = -1;
 private _searchTerm = "ACE_Player)],";

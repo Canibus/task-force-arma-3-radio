@@ -29,8 +29,21 @@ if (!TFAR_currentNearPlayersProcessed) then {
 
     private _nearPlayersCount = count TFAR_currentNearPlayersProcessing;
 
-    private _playersToProcess = _nearPlayersCount min 30; //Plugin POS info takes about 100 microseconds meaning 10 position updates block for 1 ms
-    if (_playersToProcess == 0) exitWith {TFAR_currentNearPlayersProcessed = true};
+    private _playersToProcessCount = _nearPlayersCount min 30; //Plugin POS info takes about 100 microseconds meaning 10 position updates block for 1 ms
+    if (_playersToProcessCount == 0) exitWith {TFAR_currentNearPlayersProcessed = true};
+
+    private _playersToProcess = TFAR_currentNearPlayersProcessing select [0, _playersToProcessCount];
+
+    // Bulk calculate object interception, we can use multithreading for it and its quite expensive
+    if (TFAR_objectInterceptionEnabled) then {
+        //#define _MT_LINE_INTERSECT // Crashy?
+        #ifdef _MT_LINE_INTERSECT
+        //GVAR(ObjectInterceptionCache) = createHashMap; // We don't need to reset, we will just overwrite when we insert anyway. Downside is that we accumulate all players that ever were on the server. But a hundred hashmap entries is fine.
+        _playersToProcess call TFAR_fnc_objectInterceptionBulkToCache;
+        #else
+        GVAR(ObjectInterceptionCache) = createHashMap; // The normal updates will write to cache, if we don't clear it we'll keep sending stale data
+        #endif
+    };
 
     {
         private _controlled = _x getVariable ["TFAR_controlledUnit", objNull];
@@ -38,17 +51,52 @@ if (!TFAR_currentNearPlayersProcessed) then {
         if (_x getVariable ["TFAR_forceSpectator", false]) then {
             _unitName = _x getVariable ["TFAR_spectatorName", _unitName];
         };
-        if (isNull _controlled) then {
-            [_x, true, _unitName] call TFAR_fnc_sendPlayerInfo;
-        } else {
-            [_controlled, true, _unitName] call TFAR_fnc_sendPlayerInfo;
-        };
-    } count (TFAR_currentNearPlayersProcessing select [0, _playersToProcess]); //commy2
+
+        [[_controlled, _x] select (isNull _controlled), true, _unitName] call TFAR_fnc_sendPlayerInfo;
+    } count _playersToProcess; //commy2
+
+    // Fetch their isSpeaking state, in bulk
+
+    private _request = "IS_SPEAKING_BULK	" + ((_playersToProcess apply {_x getVariable ["TFAR_unitName", name _x]}) joinString "	");
+    private _result = "task_force_radio_pipe" callExtension _request;
+    private _pPSS = _result splitString "	"; // perPlayerSpeakingStatus
+
+    private _gVarIsSpe = ["TFAR_isSpeaking", false]; // Micro optimization (Though ASC optimizer would turn this into constant anyway)
+    private _gVarIsRec = ["TFAR_isReceiving", false]; // Micro optimization (Though ASC optimizer would turn this into constant anyway)
+    if (count _pPSS == count _playersToProcess) then { // if not, then something went weirdly wrong?
+        {
+            //private _player = _x;
+            private _splitResult = (_pPSS select _forEachIndex) splitString "";
+
+            (_splitResult apply {_x isEqualTo "1"}) params ["_isSpeaking", "_isReceiving"];
+
+            // Only run this code if speaking state has changed
+            if ((_x getVariable _gVarIsSpe) isNotEqualTo _isSpeaking) then {
+
+                _x setRandomLip _isSpeaking;
+
+                if (_isSpeaking) then {
+                    _x setVariable ["TFAR_speakingSince", diag_tickTime];
+                };
+
+                _x setVariable ["TFAR_isSpeaking", _isSpeaking];
+                _x setVariable ["TF_isSpeaking", _isSpeaking];//#Deprecated variable
+                ["OnSpeak", [_x, _isSpeaking]] call TFAR_fnc_fireEventHandlers;
+            };
+
+            if ((_x getVariable _gVarIsRec) isNotEqualTo _isReceiving) then {
+                _x setVariable ["TFAR_isReceiving", _isReceiving];
+                ["OnRadioReceive", [_x, _isReceiving]] call TFAR_fnc_fireEventHandlers;
+            };
+        } forEach _playersToProcess;
+    } else {
+        //diag_log ["###", _pPSS, _playersToProcess];
+    };
 
     //Remove processed Units from array
-    TFAR_currentNearPlayersProcessing deleteRange [0, _playersToProcess];
+    TFAR_currentNearPlayersProcessing deleteRange [0, _playersToProcessCount];
     //We just processed the last players
-    if ((_nearPlayersCount - _playersToProcess) isEqualTo 0) exitWith {TFAR_currentNearPlayersProcessed = true};
+    if ((_nearPlayersCount - _playersToProcessCount) isEqualTo 0) exitWith {TFAR_currentNearPlayersProcessed = true};
 };
 
 //Don't process anymore if we already blocked too long (5 millisec)
@@ -106,7 +154,7 @@ if (_needNearPlayerScan) then {
 
     TFAR_currentNearPlayers = TFAR_currentNearPlayers arrayIntersect TFAR_currentNearPlayers; //Remove duplicates
 
-    TFAR_currentFarPlayers = (call BIS_fnc_listPlayers - TFAR_currentNearPlayers) select {isPlayer _x};
+    TFAR_currentFarPlayers = (allPlayers - TFAR_currentNearPlayers) select {isPlayer _x};
 
     TFAR_lastPlayerScanTime = diag_tickTime;
 };

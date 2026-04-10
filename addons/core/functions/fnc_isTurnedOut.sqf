@@ -40,7 +40,7 @@ if (isTurnedOut _unit) exitWith {[true, 2]};
 
 
 
-private _fnc_getAttenuationFromEffect = 
+private _fnc_getAttenuationFromEffect =
 [
     {
         [(typeOf _vehicle), "tf_isolatedAmount", 0.0] call TFAR_fnc_getVehicleConfigProperty
@@ -67,7 +67,7 @@ private _fnc_getAttenuationFromEffect =
 
 // open vehicle
 private _vehicle = vehicle _unit;
-private _config = configFile >> "CfgVehicles" >> typeOf _vehicle;
+private _config = configOf _vehicle;
 
 // class CfgSoundEffects >> class AttenuationsEffects
 private _attenuationType = getText (_config >> "attenuationEffectType");
@@ -94,7 +94,7 @@ _attenuationAPI append (getArray (_config >> "CBA_attenuatedRoles"));
 if !(_attenuationAPI isEqualTo []) then {
     {
         _x params [["_configRole", "", [""]], ["_cargoOrTurretIndex", -1, [0]], ["_animation", "", [""]]];
-        
+
         if (_configRole == _role && {_cargoOrTurretIndex isEqualTo _cargoIndex || _cargoOrTurretIndex isEqualTo _turretPath}) exitWith {
             _return = if !(_animation isEqualTo "") then {
                 !((_vehicle animationSourcePhase _animation) > 0)

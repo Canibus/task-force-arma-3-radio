@@ -11,5 +11,5 @@
 #define SERVER_API_VERSION 1
 
 // MINIMAL required version for the Mod. Components can specify others..
-#define REQUIRED_VERSION 1.72
+#define REQUIRED_VERSION 2.20
 #define REQUIRED_CBA_VERSION {3,0,0}

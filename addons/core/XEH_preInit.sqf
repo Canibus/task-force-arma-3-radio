@@ -12,6 +12,7 @@ GVAR(SettingsInitialized) = false;
 
 GVAR(VehicleConfigCacheNamespace) = false call CBA_fnc_createNamespace;
 GVAR(WeaponConfigCacheNamespace) = false call CBA_fnc_createNamespace;
+//GVAR(ObjectInterceptionCache) = createHashMap; // We don't need to reset, we will just overwrite when we insert anyway. Downside is that we accumulate all players that ever were on the server. But a hundred hashmap entries is fine.
 
 VARIABLE_DEFAULT(TFAR_Teamspeak_Channel_Name,"TaskForceRadio");
 VARIABLE_DEFAULT(TFAR_Teamspeak_Channel_Password,"123");
